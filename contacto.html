@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Angel Ayuquina</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: white;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .nav-link {
+            font-weight: normal;
+            color: #000;
+            margin-right: 15px;
+        }
+        .nav-link:hover {
+            color: #007bff;
+        }
+        .hero {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .contact-section {
+            padding: 50px 20px;
+        }
+        .contact-section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .contact-card {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+        .contact-card h3 {
+    font-size: 1.5rem;
+    color: #009688;
+}
+
+        .social-links img {
+            margin: 10px;
+        }
+        .profile-img {
+            max-width: 150px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Para que esté detrás del contenido */
+    background: linear-gradient(to bottom, #f5f7fa, #84aac5); /* Fondo con degradado */
+}
+.navbar {
+            background: linear-gradient(45deg, #081534, #007bff); /* Fondo con degradado */
+            border-bottom: 1px solid #dee2e6;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: white !important;
+        }
+        .navbar .nav-link {
+            font-weight: normal;
+            color: white !important; /* Color normal */
+            margin-right: 15px;
+            transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
+        }
+        .navbar .nav-link:hover {
+            color: #009688 !important; /* Cambia a amarillo claro */
+            transform: scale(1.2); /* Crece al 120% */
+        }
+        .nav-link.active {
+            color: white !important; /* Amarillo claro */
+            border-bottom: 2px solid red; /* Línea roja debajo del título activo */
+
+        }
+
+        .fade-out {
+    animation: fadeOut 0.5s forwards; /* Define duración y que se mantenga */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="particles-js"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="Img/teemo.png" alt="Imagen pequeña" style="width: 50px; height: 50px; margin-right: 10px;">
+            Mi Portafolio
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-link="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-link="proyectos.html">Mi Portafolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-link="lenguajes.html">Herramientas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-link="educacion.html">Educación</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-link="contacto.html">Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <div class="ml-auto">
+            <img src="Img/okt.png" alt="Imagen derecha" style="width: 50px; height: 50px; margin-left: 80px;">
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <!-- Información Personal -->
+                <div class="col-md-6">
+                    <div class="contact-card">
+                        <img src="Img/fotoUta.jpg" alt="Foto de perfil" class="profile-img">
+                        <h3>Información Personal</h3>
+                        <p><strong>Nombre:</strong> Angel Israel Ayuquina Chimborazo</p>
+                        <p><strong>Email:</strong> <a href="mailto:angel.ayuquina@example.com">aayuquina4220@uta.edu.ec</a></p>
+                        <p><strong>Teléfono:</strong> +593 967009468</p>
+                        <p><strong>Dirección:</strong> Tungurahua -  Ambato, Ecuador</p>
+                    </div>
+                </div>
+                <!-- Redes Sociales -->
+                <div class="col-md-6">
+                    <div class="contact-card">
+                        <h3>Redes Sociales</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/T1Angel4220" target="_blank">
+                                <img src="https://img.shields.io/badge/GitHub-%2312100E.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+                            </a>
+                            <a href="https://www.tiktok.com/@engel_kiske" target="_blank">
+                                <img src="https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok">
+                            </a>
+                            <a href="https://www.instagram.com/derhalloman21" target="_blank">
+                                <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
+                            </a>
+                            <a href="https://www.facebook.com/angel.ayuquina123/" target="_blank">
+                                <img src="https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook">
+                            </a>
+                            <p></p>
+                            <h3>Para donaciones</h3>
+                            <a href="https://www.paypal.me/AngelAyuquina" target="_blank">
+                                <img src="https://img.shields.io/badge/PayPal-%231877F2.svg?style=for-the-badge&logo=paypal&logoColor=white" alt="PayPal">
+                            </a>
+                            <br>
+                            <img src="Img/teemologoo.png" alt="Imagen de apoyo" class="img-fluid mt-3" style="width: 280px;">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Particles.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#009688" },
+                "shape": {
+                    "type": "circle",
+                    "stroke": { "width": 0, "color": "#000000" }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": { "enable": false }
+                },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#009688", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 6 }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": { "grab": { "distance": 140 }, "push": { "particles_nb": 4 } }
+            },
+            "retina_detect": true
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Previene la redirección inmediata
+                const target = this.getAttribute('data-link');
+                document.body.classList.add('fade-out'); // Aplica la animación
+                setTimeout(() => {
+                    window.location.href = target; // Redirige después de la animación
+                }, 500); // Duración de la animación en ms
+            });
+        });
+            // Obtén la URL actual
+    const currentPath = window.location.pathname.split('/').pop();
+
+// Selecciona todos los enlaces del menú
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+    // Obtén el atributo data-link de cada enlace
+    const linkPath = link.getAttribute('data-link');
+
+    // Si coincide con la URL actual, añade la clase "active"
+    if (linkPath === currentPath) {
+        link.classList.add('active');
+    } else {
+        link.classList.remove('active'); // Por si ya estaba activa en otra página
+    }
+});
+    </script>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

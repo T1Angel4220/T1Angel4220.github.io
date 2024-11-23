@@ -5,76 +5,267 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Angel Ayuquina</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Incluir Font Awesome para los iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Para evitar barras de desplazamiento */
+            color: #333;
         }
+        #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Para que esté detrás del contenido */
+    background: linear-gradient(to bottom, #f5f7fa, #84aac5); /* Fondo con degradado */
+}
+
+        
         .navbar {
-            background-color: white;
+            background: linear-gradient(45deg, #081534, #007bff); /* Fondo con degradado */
             border-bottom: 1px solid #dee2e6;
         }
         .navbar-brand {
             font-weight: bold;
             font-size: 1.2rem;
+            color: white !important;
         }
-        .nav-link {
+        .navbar .nav-link {
             font-weight: normal;
-            color: #000;
+            color: white !important; /* Color normal */
             margin-right: 15px;
+            transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
         }
-        .nav-link:hover {
-            color: #007bff;
+        .navbar .nav-link:hover {
+            color: #009688 !important; /* Cambia a amarillo claro */
+            transform: scale(1.2); /* Crece al 120% */
         }
-        .hero {
-            text-align: center;
+        .nav-link.active {
+            color: white !important; /* Amarillo claro */
+            border-bottom: 2px solid red; /* Línea roja debajo del título activo */
+
+        }
+        .container {
             margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards; /* Animación al cargar */
         }
-        .hero h1 {
-            font-size: 3rem;
+        .photo {
+            border: 2px solid #009688;
+            padding: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .photo img {
+            width: 150px;
+            height: 150px;
+        }
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+            gap: 20px; /* Espacio entre los items */
+            margin-top: 30px;
+        }
+        .section {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s, box-shadow 0.4s, background-color 0.4s; /* Suaviza las transiciones */
+            cursor: pointer;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background: #e0f7fa; /* Fondo azul claro al pasar el ratón */
+        }
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #00695c; /* Cian más oscuro */
             font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+        .section:last-child {
+            grid-column: span 3; /* Ocupa 3 columnas */
+        }
+        .fade-out {
+            animation: fadeOut 0.5s forwards; /* Define duración y que se mantenga */
+        }
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Fondo animado -->
+    <div id="particles-js"></div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">Mi Portafolio</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">
+            <img src="Img/teemo.png" alt="Imagen pequeña" style="width: 50px; height: 50px; margin-right: 10px;">
+            Mi Portafolio
+        </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#inicio">Inicio</a>
+                    <a class="nav-link" data-link="index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#mi-portafolio">Mi Portafolio</a>
+                    <a class="nav-link" data-link="proyectos.html">Mi Portafolio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#educacion">Educación</a>
+                    <a class="nav-link" data-link="lenguajes.html">Herramientas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#experiencia">Experiencia</a>
+                    <a class="nav-link" data-link="educacion.html">Educación</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#meritos">Méritos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contacto">Contacto</a>
+                    <a class="nav-link" data-link="contacto.html">Contacto</a>
                 </li>
             </ul>
+        </div>
+        <div class="ml-auto">
+            <img src="Img/okt.png" alt="Imagen derecha" style="width: 50px; height: 50px; margin-left: 80px;">
         </div>
     </nav>
 
     <!-- Contenido principal -->
-    <div class="hero">
-        <h1>Angel Israel Ayuquina Chimborazo</h1>
-        <p> Tengo 20 años y estudio en la Universidad Técnica de Ambato en la facultadad de la FISEI la carrera de Ingeniería de Software</p>
+    <div class="container">
+        <div class="profile">
+            <div class="photo">
+                <img src="Img/fotoUta.jpg" alt="Foto de perfil">
+            </div>
+            <h2>Angel Ayuquina</h2>
+            <div class="info">
+                <p><strong>Universidad:</strong> Técnica de Ambato</p>
+            </div>
+        </div>
+        <div class="sections">
+            <div class="section">
+                <a href="proyectos.html">
+                    <div class="icon">👔</div>
+                    <h3>Proyectos</h3>
+                    <p>Conoce más sobre mi experiencia profesional.</p>
+                </a>
+            </div>
+            <div class="section">
+                <a href="educacion.html">
+                    <div class="icon">👤</div>
+                    <h3>Educación</h3>
+                    <p>Explora mi trayectoria académica.</p>
+                </a>
+            </div>
+            <div class="section">
+                <a href="lenguajes.html">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <h3>Herramientas</h3>
+                    <p>Descubre detalles adicionales sobre las herramientas que domino.</p>
+                </a>
+            </div>
+            <div class="section">
+                <a href="contacto.html">
+                    <div class="icon">⚪⚪⚪</div>
+                    <h3>Más Información</h3>
+                    <p>Descubre detalles adicionales sobre mí.</p>
+                </a>
+            </div>
+        </div>
     </div>
 
-    <!-- Bootstrap JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Particles.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#009688" },
+                "shape": {
+                    "type": "circle",
+                    "stroke": { "width": 0, "color": "#000000" }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": { "enable": false }
+                },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#009688", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 6 }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": { "grab": { "distance": 140 }, "push": { "particles_nb": 4 } }
+            },
+            "retina_detect": true
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Previene la redirección inmediata
+                const target = this.getAttribute('data-link');
+                document.body.classList.add('fade-out'); // Aplica la animación
+                setTimeout(() => {
+                    window.location.href = target; // Redirige después de la animación
+                }, 500); // Coincide con la duración de la animación
+            });
+        });
+            // Obtén la URL actual
+    const currentPath = window.location.pathname.split('/').pop();
+
+// Selecciona todos los enlaces del menú
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+    // Obtén el atributo data-link de cada enlace
+    const linkPath = link.getAttribute('data-link');
+
+    // Si coincide con la URL actual, añade la clase "active"
+    if (linkPath === currentPath) {
+        link.classList.add('active');
+    } else {
+        link.classList.remove('active'); // Por si ya estaba activa en otra página
+    }
+});
+    </script>
 </body>
 </html>
